@@ -8,6 +8,8 @@
     --secondary-background: #F5F4FA;
     --accent-background: #2F303A;
     --logo-color: #000000;
+    --border-color-header: #ECECEC;
+    --border-color: #EEEEEE;
 }
 
 body {
@@ -22,6 +24,10 @@ body {
 h1,h2,h3,h4,h5,h6,p {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+img {
+    display: block;
 }
 
 .container {
@@ -49,10 +55,14 @@ h1,h2,h3,h4,h5,h6,p {
 
 /* Шапка */
 .header {
+    border-bottom: 1px solid var(--border-color-header);
+}
+
+.header > .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
+ }
 
 .nav-block {
     display: flex;
@@ -107,6 +117,10 @@ h1,h2,h3,h4,h5,h6,p {
     font-size: 14px;
     line-height: calc(16/14);
     letter-spacing: 0.02em;
+}
+
+.contacts a {
+    color: var(--main-text-color);
 }
 
 .nav a:hover,
@@ -164,7 +178,7 @@ h1,h2,h3,h4,h5,h6,p {
     display: flex;
 }
 
-.advantages-item: {
+.advantages-item {
     width: calc((100% - 90px) / 4);
 }
 
@@ -234,6 +248,7 @@ h1,h2,h3,h4,h5,h6,p {
 .item.team {  
     background-color: var(--background);
     border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .subtitle-team {
@@ -300,9 +315,10 @@ h1,h2,h3,h4,h5,h6,p {
 
 /* Портфоліо */
 /* Фільтри */
-.filter {
+.filter.list {
     display: flex;
     justify-content: center;
+    margin-bottom: 34px;
 }
 
 .filter-item:not(:last-child) {
@@ -329,11 +345,21 @@ h1,h2,h3,h4,h5,h6,p {
     color: var(--secondary-tect-color);
     background-color: var(--acent-color);
     cursor: pointer;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Приклади робіт */
 .portfolio-title {
-   visibility: hidden; 
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
 .portfolio {
@@ -348,14 +374,17 @@ h1,h2,h3,h4,h5,h6,p {
     background-color: var(--background);
 }
 
-.portfolio-icon {
-    margin-bottom: 20px;
+
+.portfolio-content {
+    border: 1px solid var(--border-color);
+    border-top: none;
 }
 
 .subtitle-portfolio {
     margin-bottom: 6px;
     padding-right: 24px;
     padding-left: 24px;
+    padding-top: 20px;
 
     font-weight: 700;
     font-size: 18px;
